@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Dokumen Hultah ke-23 - YPPH Darul Mujahidin NWDI Pringgasela</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            850: '#07482a',
+                            900: '#0A5C36', // Primary Emerald NWDI
+                            950: '#053820',
+                        },
+                        gold: {
+                            300: '#F3E5AB',
+                            400: '#E5C158',
+                            500: '#D4AF37', // Royal Gold
+                            600: '#AA8821',
+                        },
+                        charcoal: {
+                            800: '#222222',
+                            900: '#1A1A1A', // Dark Charcoal
+                            950: '#121212',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Islamic Pattern Background SVG Overlay */
+        .islamic-pattern {
+            background-color: #0A5C36;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #0A5C36 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.08;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF1B0 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+            border-color: #D4AF37;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0A5C36;
+            border-radius: 4px;
+            border: 1px solid #D4AF37;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-charcoal-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-emerald-950 border-b border-gold-500/30 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-2 mx-auto">
+            <div class="flex items-center space-x-2 text-gold-400">
+                <i class="fa-solid fa-star-and-crescent text-gold-500">
+                </i>
+                <span class="font-semibold">Peringatan Hultah ke-23 YPPH Darul Mujahidin NWDI Pringgasela</span>
+                <span class="hidden md:inline text-gray-400">| System Digitalisasi Arsip Terpadu</span>
+            </div>
+            <div class="flex items-center space-x-4 text-gray-300">
+                <span><i class="fa-regular fa-clock text-gold-500 mr-1"></i> Status: <span class="text-emerald-400 font-medium">Persiapan Aktif</span></span>
+                <span><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Pringgasela, Lotim</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="sticky top-0 z-40 bg-charcoal-900/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-emerald-900 border-2 border-gold-500 flex items-center justify-center shadow-lg shadow-emerald-900/50">
+                        <i class="fa-solid fa-mosque text-gold-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-lg sm:text-xl font-bold tracking-wide text-white leading-tight">
+                            DARUL MUJAHIDIN <span class="text-gold-500">NWDI</span>
+                        </h1>
+                        <p class="text-xs text-emerald-400 tracking-wider">PRINGGASELA • HULTAH Ke-23</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="scrollToSection('kategori-section')" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors px-3 py-2">
+                        <i class="fa-solid fa-folder-tree mr-1 text-gold-500"></i> Folder Dokumen
+                    </button>
+                    <button onclick="scrollToSection('embed-section')" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors px-3 py-2">
+                        <i class="fa-solid fa-table mr-1 text-gold-500"></i> Live Preview
+                    </button>
+                    <button onclick="openUploadModal()" class="bg-gradient-to-r from-gold-600 to-gold-500 text-charcoal-900 font-bold px-4 py-2 rounded-lg text-sm hover:brightness-110 transition-all shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Unggah Dokumen
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button onclick="openUploadModal()" class="bg-gold-500 text-charcoal-900 p-2 rounded-lg font-bold text-sm">
+                        <i class="fa-solid fa-plus"></i> Upload
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH ISLAMIC PATTERN -->
+    <header class="relative bg-emerald-900 overflow-hidden border-b border-gold-500/30">
+        <!-- Overlay Pattern -->
+        <div class="absolute inset-0 opacity-10 islamic-pattern"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16 text-center">
+            <!-- Crest Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-gold-500/40 text-gold-400 text-xs sm:text-sm font-semibold mb-6 shadow-xl">
+                <i class="fa-solid fa-crown text-gold-500"></i> Portal Resmi Panitia & Pengurus
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                Portal Digitalisasi Dokumen <br class="hidden sm:inline"/>
+                <span class="gold-gradient-text">Hultah ke-23</span> NWDI Pringgasela
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-200 text-sm sm:text-base mb-8 font-light leading-relaxed">
+                Pusat pengelolaan, pencarian, dan pengarsipan dokumen resmi Hari Ulang Tahun (HULTAH) ke-23 Yayasan Pondok Pesantren Darul Mujahidin NWDI Pringgasela secara terstruktur dan aman berbasis Cloud Google Drive.
+            </p>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="#kategori-section" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-charcoal-900 font-bold hover:brightness-110 transition-all shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-brands fa-google-drive text-lg"></i> Akses Folder Drive
+                </a>
+                <button onclick="focusSearch()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-charcoal-900/80 hover:bg-charcoal-800 border border-gold-500/40 text-gold-400 font-semibold transition-all flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-solid fa-magnifying-glass"></i> Cari Dokumen
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- LIVE STATS SUMMARY SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Stat 1 -->
+            <div class="bg-charcoal-800/90 border border-gold-500/20 rounded-xl p-5 flex items-center space-x-4 shadow-xl backdrop-blur-md">
+                <div class="w-12 h-12 rounded-lg bg-emerald-900/60 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl flex-shrink-0">
+                    <i class="fa-solid fa-file-contract"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400 font-medium">Total Dokumen Arsip</p>
+                    <p class="text-2xl font-bold text-white font-serif">148 <span class="text-xs text-emerald-400 font-normal">File</span></p>
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="bg-charcoal-800/90 border border-gold-500/20 rounded-xl p-5 flex items-center space-x-4 shadow-xl backdrop-blur-md">
+                <div class="w-12 h-12 rounded-lg bg-emerald-900/60 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl flex-shrink-0">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400 font-medium">Folder Terintegrasi</p>
+                    <p class="text-2xl font-bold text-white font-serif">06 <span class="text-xs text-emerald-400 font-normal">Divisi Utama</span></p>
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="bg-charcoal-800/90 border border-gold-500/20 rounded-xl p-5 flex items-center space-x-4 shadow-xl backdrop-blur-md">
+                <div class="w-12 h-12 rounded-lg bg-emerald-900/60 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl flex-shrink-0">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400 font-medium">Status Kesiapan Hultah</p>
+                    <p class="text-2xl font-bold text-gold-400 font-serif">85% <span class="text-xs text-gray-400 font-normal">Selesai</span></p>
+                </div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="bg-charcoal-800/90 border border-gold-500/20 rounded-xl p-5 flex items-center space-x-4 shadow-xl backdrop-blur-md">
+                <div class="w-12 h-12 rounded-lg bg-emerald-900/60 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl flex-shrink-0">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400 font-medium">Keamanan Akses</p>
+                    <p class="text-2xl font-bold text-emerald-400 font-serif">Terproteksi <span class="text-xs text-gray-400 font-normal">Drive</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="bg-charcoal-800 border border-gold-500/30 rounded-2xl p-6 shadow-2xl">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                <!-- Search Input Bar -->
+                <div class="relative w-full lg:w-1/2">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-gold-500"></i>
+                    <input type="text" id="searchInput" onkeyup="filterFolders()" placeholder="Cari dokumen, SK, proposal, rundown, kwitansi..." 
+                        class="w-full pl-11 pr-4 py-3 bg-charcoal-900 border border-gold-500/30 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 transition-all text-sm">
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 scrollbar-none" id="filterButtons">
+                    <button onclick="setActiveFilter('all')" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-semibold bg-gold-500 text-charcoal-900 whitespace-nowrap transition-all">
+                        Semua Dokumen
+                    </button>
+                    <button onclick="setActiveFilter('legalitas')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-charcoal-900 text-gray-300 hover:text-gold-400 border border-gold-500/20 whitespace-nowrap transition-all">
+                        Legalitas
+                    </button>
+                    <button onclick="setActiveFilter('proposal')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-charcoal-900 text-gray-300 hover:text-gold-400 border border-gold-500/20 whitespace-nowrap transition-all">
+                        Proposal
+                    </button>
+                    <button onclick="setActiveFilter('acara')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-charcoal-900 text-gray-300 hover:text-gold-400 border border-gold-500/20 whitespace-nowrap transition-all">
+                        Acara
+                    </button>
+                    <button onclick="setActiveFilter('keuangan')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-charcoal-900 text-gray-300 hover:text-gold-400 border border-gold-500/20 whitespace-nowrap transition-all">
+                        Keuangan & LPJ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOLDER CATEGORY GRID SECTION -->
+    <section id="kategori-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-folder-tree text-gold-500 text-xl"></i>
+                    Folder Utama Drive Hultah ke-23
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400 mt-1">Struktur folder resmi yang disesuaikan dengan pembagian kerja panitia</p>
+            </div>
+            <span class="hidden sm:block text-xs bg-emerald-900 text-emerald-300 px-3 py-1 rounded-full border border-emerald-700">
+                Google Drive Sync Active
+            </span>
+        </div>
+
+        <!-- Grid Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="folderGrid">
+            
+            <!-- Folder 1: Legalitas -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="legalitas" data-title="surat legalitas sk panitia izin undangan">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 01</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('01. Surat & Legalitas', 'legalitas')">
+                        01. Surat & Legalitas
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Dokumen legalitas organisasi, SK Panitia Hultah ke-23, surat perizinan instansi, dan arsip undangan VVIP/Tamu.
+                    </p>
+                    <!-- Sub-file list preview -->
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>SK_Panitia_Hultah_23_Final.pdf</span>
+                            <span class="text-gray-500 text-[10px]">1.2 MB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-word text-blue-400 mr-2"></i>Draft_Surat_Undangan_VVIP.docx</span>
+                            <span class="text-gray-500 text-[10px]">450 KB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 18 File</span>
+                    <button onclick="openFolderModal('01. Surat & Legalitas', 'legalitas')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Folder 2: Proposal -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="proposal" data-title="proposal sponsorship rab anggaran donatur">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 02</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('02. Proposal & Sponsorship', 'proposal')">
+                        02. Proposal & Sponsorship
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Proposal induk Hultah ke-23, Rencana Anggaran Biaya (RAB), paket sponsorship, dan lembar komitmen donatur.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>Proposal_Induk_Hultah_23.pdf</span>
+                            <span class="text-gray-500 text-[10px]">4.8 MB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-excel text-emerald-400 mr-2"></i>Master_RAB_Hultah_23.xlsx</span>
+                            <span class="text-gray-500 text-[10px]">890 KB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 24 File</span>
+                    <button onclick="openFolderModal('02. Proposal & Sponsorship', 'proposal')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Folder 3: Acara -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="acara" data-title="acara rundown teks sambutan doa penceramah juri">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 03</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('03. Acara & Persidangan', 'acara')">
+                        03. Acara & Persidangan
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Rundown Pengajian Umum/Hultah ke-23, naskah doa, penceramah, teks sambutan Ketua Yayasan, dan petunjuk lomba.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>Rundown_Utama_Hultah_23.pdf</span>
+                            <span class="text-gray-500 text-[10px]">620 KB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-word text-blue-400 mr-2"></i>Teks_Sambutan_Ketua_Yayasan.docx</span>
+                            <span class="text-gray-500 text-[10px]">310 KB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 32 File</span>
+                    <button onclick="openFolderModal('03. Acara & Persidangan', 'acara')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Folder 4: Keuangan -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="keuangan" data-title="keuangan lpj kwitansi nota rekapitulasi pengeluaran">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-vault"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 04</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('04. Seksi Keuangan & LPJ', 'keuangan')">
+                        04. Seksi Keuangan & LPJ
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Laporan Pertanggungjawaban (LPJ), rekapitulasi dana masuk/keluar, bukti kwitansi digital, dan nota transaksi.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-excel text-emerald-400 mr-2"></i>Rekap_Laporan_Kas_Harian.xlsx</span>
+                            <span class="text-gray-500 text-[10px]">1.1 MB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>Kumpulan_Kwitansi_Sewa_Panggung.pdf</span>
+                            <span class="text-gray-500 text-[10px]">3.2 MB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 41 File</span>
+                    <button onclick="openFolderModal('04. Seksi Keuangan & LPJ', 'keuangan')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Folder 5: Publikasi & Dokumentasi -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="dokumentasi" data-title="publikasi dokumentasi banner foto video poster spanduk">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 05</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('05. Publikasi & Dokumentasi', 'dokumentasi')">
+                        05. Publikasi & Dokumentasi
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Desain Baliho/Spanduk master CDR/PSD, dokumentasi foto kegiatan Hultah, video rekaman pengajian, dan press release.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-image text-purple-400 mr-2"></i>Desain_Baliho_Utama_Hultah23.png</span>
+                            <span class="text-gray-500 text-[10px]">12.4 MB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-lines text-blue-400 mr-2"></i>Press_Release_Hultah_NWDI.docx</span>
+                            <span class="text-gray-500 text-[10px]">210 KB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 25 File</span>
+                    <button onclick="openFolderModal('05. Publikasi & Dokumentasi', 'dokumentasi')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Folder 6: Logistik & Perlengkapan -->
+            <div class="folder-card bg-charcoal-800 border border-gold-500/20 rounded-2xl p-6 gold-border-glow flex flex-col justify-between" data-category="logistik" data-title="logistik perlengkapan layout tempat denah vendor inventaris">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-900/80 border border-gold-500/40 flex items-center justify-center text-gold-500 text-2xl">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-900 text-gold-400 px-2.5 py-1 rounded-md border border-gold-500/20">Folder 06</span>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2 hover:text-gold-400 transition-colors cursor-pointer" onclick="openFolderModal('06. Logistik & Perlengkapan', 'logistik')">
+                        06. Logistik & Perlengkapan
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        Layout/denah lokasi Hultah di Lapangan Pesantren, daftar inventaris sound system/panggung, dan kontrak vendor.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-map text-emerald-400 mr-2"></i>Denah_Layout_Panggung_Utama.pdf</span>
+                            <span class="text-gray-500 text-[10px]">2.1 MB</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs bg-charcoal-900/60 p-2 rounded-lg text-gray-300 border border-gray-800">
+                            <span class="truncate"><i class="fa-solid fa-file-excel text-emerald-400 mr-2"></i>Ceklis_Aset_Logistik_Seksi.xlsx</span>
+                            <span class="text-gray-500 text-[10px]">540 KB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-700/50 flex items-center justify-between">
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-paperclip text-gold-500 mr-1"></i> 10 File</span>
+                    <button onclick="openFolderModal('06. Logistik & Perlengkapan', 'logistik')" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                        Buka Folder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE EMBED PREVIEW SECTION (SIMULATION) -->
+    <section id="embed-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-charcoal-800 border border-gold-500/30 rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Section Header -->
+            <div class="bg-emerald-950 p-6 border-b border-gold-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs text-gold-400 font-semibold tracking-wider uppercase">Live Preview & Embed Terintegrasi</span>
+                    <h2 class="font-serif text-2xl font-bold text-white flex items-center gap-2 mt-1">
+                        <i class="fa-brands fa-google-drive text-gold-500"></i> Interface Dokumen Drive & Sheets
+                    </h2>
+                </div>
+                <!-- Toggle Tabs -->
+                <div class="flex bg-charcoal-900 p-1 rounded-xl border border-gold-500/20 self-stretch md:self-auto">
+                    <button id="tabBtnDrive" onclick="switchEmbedTab('drive')" class="flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-bold bg-gold-500 text-charcoal-900 transition-all">
+                        <i class="fa-solid fa-folder-tree mr-1"></i> Google Drive View
+                    </button>
+                    <button id="tabBtnSheet" onclick="switchEmbedTab('sheet')" class="flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-semibold text-gray-300 hover:text-gold-400 transition-all">
+                        <i class="fa-solid fa-table-cells mr-1"></i> Rekap Sheets Live
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 1: GOOGLE DRIVE SIMULATED VIEW -->
+            <div id="embedDriveView" class="p-6">
+                <!-- Action Bar Inside Drive -->
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4 text-xs text-gray-400 bg-charcoal-900 p-3 rounded-xl border border-gray-800">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-white">Path:</span>
+                        <span class="text-emerald-400">My Drive</span>
+                        <span>/</span>
+                        <span class="text-gold-400 font-semibold">00_HULTAH_23_NWDI_PRINGGASELA</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span><i class="fa-solid fa-lock text-gold-500 mr-1"></i> Akses Terbatas (Panitia)</span>
+                        <button onclick="refreshDriveView()" class="hover:text-gold-400 transition-colors">
+                            <i class="fa-solid fa-rotate-right"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulated File List Table -->
+                <div class="overflow-x-auto rounded-xl border border-gray-800">
+                    <table class="w-full text-left text-xs text-gray-300">
+                        <thead class="bg-charcoal-900 text-gold-400 font-serif border-b border-gray-800">
+                            <tr>
+                                <th class="p-3.5">Nama Dokumen</th>
+                                <th class="p-3.5">Pemilik / Pengunggah</th>
+                                <th class="p-3.5">Terakhir Diubah</th>
+                                <th class="p-3.5">Ukuran</th>
+                                <th class="p-3.5 text-right">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60 bg-charcoal-800/50" id="driveTableBody">
+                            <tr class="hover:bg-emerald-950/40 transition-colors">
+                                <td class="p-3.5 font-medium text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-file-pdf text-red-400 text-sm"></i>
+                                    SK_Panitia_Pelaksana_Hultah_23_Sign.pdf
+                                </td>
+                                <td class="p-3.5 text-gray-400">Sekretariat Yayasan</td>
+                                <td class="p-3.5 text-gray-400">Hari ini, 09:15 WITA</td>
+                                <td class="p-3.5 text-gray-400">1.2 MB</td>
+                                <td class="p-3.5 text-right">
+                                    <button onclick="simulateDownload('SK_Panitia_Pelaksana_Hultah_23_Sign.pdf')" class="px-2.5 py-1 bg-emerald-900/60 text-gold-400 hover:bg-gold-500 hover:text-charcoal-900 rounded transition-all">
+                                        <i class="fa-solid fa-download"></i> Unduh
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-emerald-950/40 transition-colors">
+                                <td class="p-3.5 font-medium text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-file-excel text-emerald-400 text-sm"></i>
+                                    RAB_Keseluruhan_Hultah_ke_23_Update.xlsx
+                                </td>
+                                <td class="p-3.5 text-gray-400">Bendahara Umum</td>
+                                <td class="p-3.5 text-gray-400">Kemarin, 16:40 WITA</td>
+                                <td class="p-3.5 text-gray-400">890 KB</td>
+                                <td class="p-3.5 text-right">
+                                    <button onclick="simulateDownload('RAB_Keseluruhan_Hultah_ke_23_Update.xlsx')" class="px-2.5 py-1 bg-emerald-900/60 text-gold-400 hover:bg-gold-500 hover:text-charcoal-900 rounded transition-all">
+                                        <i class="fa-solid fa-download"></i> Unduh
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-emerald-950/40 transition-colors">
+                                <td class="p-3.5 font-medium text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-file-word text-blue-400 text-sm"></i>
+                                    Rundown_Lengkap_Acara_Pengajian_Hultah.docx
+                                </td>
+                                <td class="p-3.5 text-gray-400">Seksi Acara</td>
+                                <td class="p-3.5 text-gray-400">14 Okt 2026</td>
+                                <td class="p-3.5 text-gray-400">420 KB</td>
+                                <td class="p-3.5 text-right">
+                                    <button onclick="simulateDownload('Rundown_Lengkap_Acara_Pengajian_Hultah.docx')" class="px-2.5 py-1 bg-emerald-900/60 text-gold-400 hover:bg-gold-500 hover:text-charcoal-900 rounded transition-all">
+                                        <i class="fa-solid fa-download"></i> Unduh
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-emerald-950/40 transition-colors">
+                                <td class="p-3.5 font-medium text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-image text-purple-400 text-sm"></i>
+                                    Baliho_Utama_Panggung_Hultah_NWDI.png
+                                </td>
+                                <td class="p-3.5 text-gray-400">Seksi Pubdekdoc</td>
+                                <td class="p-3.5 text-gray-400">12 Okt 2026</td>
+                                <td class="p-3.5 text-gray-400">15.8 MB</td>
+                                <td class="p-3.5 text-right">
+                                    <button onclick="simulateDownload('Baliho_Utama_Panggung_Hultah_NWDI.png')" class="px-2.5 py-1 bg-emerald-900/60 text-gold-400 hover:bg-gold-500 hover:text-charcoal-900 rounded transition-all">
+                                        <i class="fa-solid fa-download"></i> Unduh
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 2: GOOGLE SHEETS BUDGET REKAP PREVIEW -->
+            <div id="embedSheetView" class="p-6 hidden">
+                <div class="mb-4 bg-emerald-900/40 border border-emerald-500/30 p-3 rounded-xl text-xs text-emerald-300 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-gold-500 text-sm"></i>
+                    <span>Tampilan Rekapitulasi Realisasi Anggaran Hultah ke-23 secara Real-time dari Google Sheets Bendahara.</span>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-gray-800">
+                    <table class="w-full text-left text-xs text-gray-300">
+                        <thead class="bg-charcoal-900 text-gold-400 font-serif border-b border-gray-800">
+                            <tr>
+                                <th class="p-3.5">Kode Divisi</th>
+                                <th class="p-3.5">Seksi / Divisi</th>
+                                <th class="p-3.5">Alokasi Anggaran (RAB)</th>
+                                <th class="p-3.5">Realisasi Terpakai</th>
+                                <th class="p-3.5">Sisa Anggaran</th>
+                                <th class="p-3.5">Persentase</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60 bg-charcoal-800/50">
+                            <tr>
+                                <td class="p-3.5 font-mono text-gold-400">DIV-01</td>
+                                <td class="p-3.5 font-bold text-white">Seksi Kesekretariatan & Humas</td>
+                                <td class="p-3.5">Rp 15.000.000</td>
+                                <td class="p-3.5 text-emerald-400">Rp 12.500.000</td>
+                                <td class="p-3.5 text-gray-400">Rp 2.500.000</td>
+                                <td class="p-3.5"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-[10px]">83%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-mono text-gold-400">DIV-02</td>
+                                <td class="p-3.5 font-bold text-white">Seksi Acara & Persidangan</td>
+                                <td class="p-3.5">Rp 25.000.000</td>
+                                <td class="p-3.5 text-emerald-400">Rp 21.000.000</td>
+                                <td class="p-3.5 text-gray-400">Rp 4.000.000</td>
+                                <td class="p-3.5"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-[10px]">84%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-mono text-gold-400">DIV-03</td>
+                                <td class="p-3.5 font-bold text-white">Seksi Perlengkapan & Stage</td>
+                                <td class="p-3.5">Rp 45.000.000</td>
+                                <td class="p-3.5 text-emerald-400">Rp 40.000.000</td>
+                                <td class="p-3.5 text-gray-400">Rp 5.000.000</td>
+                                <td class="p-3.5"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-[10px]">88%</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-mono text-gold-400">DIV-04</td>
+                                <td class="p-3.5 font-bold text-white">Seksi Pubdekdoc & Broadcast</td>
+                                <td class="p-3.5">Rp 18.000.000</td>
+                                <td class="p-3.5 text-emerald-400">Rp 14.200.000</td>
+                                <td class="p-3.5 text-gray-400">Rp 3.800.000</td>
+                                <td class="p-3.5"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-[10px]">78%</span></td>
+                            </tr>
+                            <tr class="bg-emerald-950/60 font-bold text-white">
+                                <td class="p-3.5 font-mono text-gold-400">TOTAL</td>
+                                <td class="p-3.5">ESTIMASI KESELURUHAN</td>
+                                <td class="p-3.5 text-gold-400">Rp 103.000.000</td>
+                                <td class="p-3.5 text-emerald-400">Rp 87.700.000</td>
+                                <td class="p-3.5 text-gold-400">Rp 15.300.000</td>
+                                <td class="p-3.5"><span class="bg-gold-500 text-charcoal-900 px-2 py-0.5 rounded text-[10px] font-bold">85%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER RESMI -->
+    <footer class="bg-charcoal-950 border-t border-gold-500/30 text-gray-400 pt-12 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <!-- Info Pesantren -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-900 border border-gold-500 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-mosque"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-base">YPPH Darul Mujahidin NWDI</h3>
+                    </div>
+                    <p class="text-xs leading-relaxed text-gray-400 mb-4">
+                        Pondok Pesantren Darul Mujahidin Nahdlatul Wathan Diniyah Islamiyah (NWDI) Pringgasela, Kecamatan Pringgasela, Kabupaten Lombok Timur, Nusa Tenggara Barat.
+                    </p>
+                    <div class="flex space-x-3 text-gold-500">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-charcoal-900 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-charcoal-900 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-charcoal-900 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-charcoal-900 transition-all"><i class="fa-brands fa-youtube text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-charcoal-900 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-charcoal-900 transition-all"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fast Nav -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 border-l-2 border-gold-500 pl-2">Navigasi Dokumen</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#kategori-section" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-angle-right text-gold-500 mr-2"></i>01. Surat & Legalitas SK</a></li>
+                        <li><a href="#kategori-section" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-angle-right text-gold-500 mr-2"></i>02. Proposal & RAB Sponsorship</a></li>
+                        <li><a href="#kategori-section" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-angle-right text-gold-500 mr-2"></i>03. Rundown Acara & Teks Sambutan</a></li>
+                        <li><a href="#kategori-section" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-angle-right text-gold-500 mr-2"></i>04. Laporan Keuangan LPJ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak Sekretariat -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 border-l-2 border-gold-500 pl-2">Sekretariat Panitia</h4>
+                    <div class="space-y-3 text-xs">
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-gold-500 mt-0.5"></i>
+                            <span>Jl. Raya Pringgasela No. 23, Pringgasela, Lombok Timur, NTB 83661</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>hultah23@darulmujahidin-nwdi.or.id</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>+62 819-3920-XXXX (Humas Panitia)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-2">
+                <p>© 2026 Panitia Hultah ke-23 YPPH Darul Mujahidin NWDI Pringgasela. Hak Cipta Dilindungi.</p>
+                <p>Sistem Digitalisasi Arsip Berbasis Google Cloud Drive</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: UPLOAD DOKUMEN MODAL -->
+    <div id="uploadModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-charcoal-800 border border-gold-500/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-emerald-900 border border-gold-500 flex items-center justify-center text-gold-500">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-white text-lg">Unggah Dokumen Baru</h3>
+                    <p class="text-xs text-gray-400">Unggah file langsung ke Google Drive Hultah ke-23</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-gray-300 font-semibold mb-1">Nama Dokumen / File</label>
+                    <input type="text" required placeholder="Contoh: Proposal_Sponsorship_V2.pdf" class="w-full bg-charcoal-900 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs text-gray-300 font-semibold mb-1">Kategori Folder Tujuan</label>
+                    <select required class="w-full bg-charcoal-900 border border-gold-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500">
+                        <option value="">-- Pilih Folder Target --</option>
+                        <option value="1">01. Surat & Legalitas</option>
+                        <option value="2">02. Proposal & Sponsorship</option>
+                        <option value="3">03. Acara & Persidangan</option>
+                        <option value="4">04. Seksi Keuangan & LPJ</option>
+                        <option value="5">05. Publikasi & Dokumentasi</option>
+                        <option value="6">06. Logistik & Perlengkapan</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-gray-300 font-semibold mb-1">Pilih File (PDF, Word, Excel, Gambar)</label>
+                    <div class="border-2 border-dashed border-gold-500/30 bg-charcoal-900/50 rounded-xl p-6 text-center cursor-pointer hover:border-gold-500 transition-all">
+                        <i class="fa-solid fa-file-circle-plus text-3xl text-gold-500 mb-2"></i>
+                        <p class="text-xs text-gray-300 font-medium">Klik untuk memilih file dari perangkat Anda</p>
+                        <p class="text-[10px] text-gray-500 mt-1">Ukuran Maksimal: 25 MB</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex justify-end gap-3">
+                    <button type="button" onclick="closeUploadModal()" class="px-4 py-2 bg-charcoal-900 text-gray-300 rounded-lg text-xs font-semibold hover:text-white">Batal</button>
+                    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-charcoal-900 rounded-lg text-xs font-bold hover:brightness-110">Proses Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: FOLDER DETAIL MODAL -->
+    <div id="folderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-charcoal-800 border border-gold-500/40 rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
+            <button onclick="closeFolderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-emerald-900 border border-gold-500 flex items-center justify-center text-gold-500 text-xl">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-white text-xl" id="folderModalTitle">Detail Folder</h3>
+                    <p class="text-xs text-gold-400">Google Drive Master Directory • Hultah ke-23</p>
+                </div>
+            </div>
+
+            <!-- List Files Inside Modal -->
+            <div class="space-y-3 mb-6 max-h-60 overflow-y-auto pr-2" id="modalFileList">
+                <!-- Dynamically Populated or Static Placeholder -->
+            </div>
+
+            <div class="pt-4 border-t border-gray-700/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <span class="text-xs text-gray-400"><i class="fa-solid fa-shield-cat text-gold-500 mr-1"></i> Akses Khusus Panitia YPPH NWDI</span>
+                <button onclick="alert('Membuka Folder Google Drive Asli di Tab Baru...')" class="w-full sm:w-auto px-5 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-gold-400 border border-gold-500/40 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-google-drive"></i> Buka Langsung di Google Drive
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-emerald-900 border border-gold-500 text-white px-5 py-3 rounded-xl shadow-2xl z-50 flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-gold-500 text-xl"></i>
+        <div>
+            <p class="text-xs font-bold text-gold-400" id="toastTitle">Berhasil</p>
+            <p class="text-xs text-gray-200" id="toastMessage">Dokumen berhasil diproses.</p>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Scroll to Specific Section
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Focus Search Bar
+        function focusSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.focus();
+            scrollToSection('searchInput');
+        }
+
+        // Filter Folders by Category & Search Keyword
+        function filterFolders() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.folder-card');
+
+            cards.forEach(card => {
+                const titleData = card.getAttribute('data-title').toLowerCase();
+                const cardCat = card.getAttribute('data-category');
+                const isMatchingSearch = titleData.includes(searchVal);
+                
+                // Active Category Filter Check
+                const activeFilterBtn = document.querySelector('.filter-btn.active-filter');
+                const activeCat = activeFilterBtn ? activeFilterBtn.textContent.trim().toLowerCase() : 'semua dokumen';
+
+                let isMatchingCat = true;
+                if (currentFilterCategory !== 'all' && cardCat !== currentFilterCategory) {
+                    isMatchingCat = false;
+                }
+
+                if (isMatchingSearch && isMatchingCat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        let currentFilterCategory = 'all';
+        function setActiveFilter(cat) {
+            currentFilterCategory = cat;
+            const buttons = document.querySelectorAll('#filterButtons button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-charcoal-900', 'active-filter');
+                btn.classList.add('bg-charcoal-900', 'text-gray-300');
+            });
+
+            event.currentTarget.classList.remove('bg-charcoal-900', 'text-gray-300');
+            event.currentTarget.classList.add('bg-gold-500', 'text-charcoal-900', 'active-filter');
+
+            filterFolders();
+        }
+
+        // Tab Switching for Embed Preview
+        function switchEmbedTab(type) {
+            const driveTab = document.getElementById('embedDriveView');
+            const sheetTab = document.getElementById('embedSheetView');
+            const btnDrive = document.getElementById('tabBtnDrive');
+            const btnSheet = document.getElementById('tabBtnSheet');
+
+            if (type === 'drive') {
+                driveTab.classList.remove('hidden');
+                sheetTab.classList.add('hidden');
+                btnDrive.className = 'flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-bold bg-gold-500 text-charcoal-900 transition-all';
+                btnSheet.className = 'flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-semibold text-gray-300 hover:text-gold-400 transition-all';
+            } else {
+                sheetTab.classList.remove('hidden');
+                driveTab.classList.add('hidden');
+                btnSheet.className = 'flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-bold bg-gold-500 text-charcoal-900 transition-all';
+                btnDrive.className = 'flex-1 md:flex-none px-4 py-2 rounded-lg text-xs font-semibold text-gray-300 hover:text-gold-400 transition-all';
+            }
+        }
+
+        // Modals Logic
+        function openUploadModal() {
+            document.getElementById('uploadModal').classList.remove('hidden');
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.add('hidden');
+        }
+
+        function openFolderModal(title, category) {
+            document.getElementById('folderModalTitle').innerText = title;
+            const fileListContainer = document.getElementById('modalFileList');
+            
+            // Dummy file lists based on category
+            let filesHtml = `
+                <div class="flex items-center justify-between p-3 bg-charcoal-900 rounded-xl border border-gray-800">
+                    <span class="text-xs text-white flex items-center gap-2"><i class="fa-solid fa-file-pdf text-red-400"></i> File_Dokumen_Utama_01.pdf</span>
+                    <button onclick="simulateDownload('File_Dokumen_Utama_01.pdf')" class="text-xs text-gold-400 hover:underline">Unduh</button>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-charcoal-900 rounded-xl border border-gray-800">
+                    <span class="text-xs text-white flex items-center gap-2"><i class="fa-solid fa-file-word text-blue-400"></i> Draft_Lampiran_Resmi_Hultah23.docx</span>
+                    <button onclick="simulateDownload('Draft_Lampiran_Resmi_Hultah23.docx')" class="text-xs text-gold-400 hover:underline">Unduh</button>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-charcoal-900 rounded-xl border border-gray-800">
+                    <span class="text-xs text-white flex items-center gap-2"><i class="fa-solid fa-file-excel text-emerald-400"></i> Data_Rekap_Aset_Panitia.xlsx</span>
+                    <button onclick="simulateDownload('Data_Rekap_Aset_Panitia.xlsx')" class="text-xs text-gold-400 hover:underline">Unduh</button>
+                </div>
+            `;
+            fileListContainer.innerHTML = filesHtml;
+            document.getElementById('folderModal').classList.remove('hidden');
+        }
+
+        function closeFolderModal() {
+            document.getElementById('folderModal').classList.add('hidden');
+        }
+
+        // Form Submission Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            closeUploadModal();
+            showToast("Sukses Mengunggah", "Dokumen telah dikirim dan disinkronkan ke Google Drive Hultah ke-23!");
+        }
+
+        // Download Simulation
+        function simulateDownload(filename) {
+            showToast("Mengunduh File", `Memulai pengunduhan file: ${filename}`);
+        }
+
+        function refreshDriveView() {
+            showToast("Drive Disinkronkan", "Tampilan folder Google Drive berhasil diperbarui.");
+        }
+
+        // Show Toast Notification
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMessage').innerText = message;
+            
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
